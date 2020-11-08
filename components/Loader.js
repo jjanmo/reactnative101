@@ -5,7 +5,7 @@ export default function Loader() {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Text style={styles.text1}>Getting ~~</Text>
+                <Text style={styles.text1}>Getting 🌈☀️☁️☔️☃️</Text>
                 <Text style={styles.text2}>Awosome Weather</Text>
             </View>
         </View>
@@ -23,9 +23,10 @@ const styles = StyleSheet.create({
         paddingVertical: 200,
     },
     text1: {
-        fontSize: 40,
+        fontSize: 30,
         color: '#3498db',
         paddingHorizontal: 50,
+        alignSelf: 'flex-start',
     },
     text2: {
         fontSize: 35,
