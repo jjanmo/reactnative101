@@ -145,7 +145,6 @@
 				90B2DCDBBCAE282B98C7DAC3 /* Pods-WeatherApp2021-WeatherApp2021Tests.debug.xcconfig */,
 				D318E3380C547FD2BDE44BA4 /* Pods-WeatherApp2021-WeatherApp2021Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
