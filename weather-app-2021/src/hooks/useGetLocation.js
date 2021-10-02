@@ -3,7 +3,7 @@ import {PermissionsAndroid} from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
 const useGetLocation = () => {
-  const [location, setLocation] = useState({latitude: 0, longitude: 0});
+  const [location, setLocation] = useState();
 
   const getPermission = async () => {
     if (Platform.OS === 'ios') {

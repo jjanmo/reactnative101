@@ -7,15 +7,7 @@ import {useGetLocation, useGetWeather} from './src/hooks';
 const App = () => {
   const [data, setData] = useState([]);
 
-  const {latitude, longitude} = useGetLocation();
-
-  const weatherData = useGetWeather(latitude, longitude);
-
-  useEffect(() => {
-    if (weatherData) {
-      setData(weatherData.data);
-    }
-  }, []);
+  const weatherData = useGetWeather();
 
   return (
     <SafeAreaView style={styles.container}>

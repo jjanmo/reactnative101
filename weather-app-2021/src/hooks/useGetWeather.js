@@ -1,14 +1,15 @@
 import {useEffect, useState} from 'react';
 import Config from 'react-native-config';
+import useGetLocation from './useGetLocation';
 
-const useGetWeather = (latitude, longitude) => {
-  console.log(latitude, longitude);
+const useGetWeather = () => {
   const [data, setData] = useState(null);
+  const location = useGetLocation();
 
-  const getWeatherDate = async () => {
+  const getWeatherDate = async location => {
     try {
       const response = await fetch(
-        `${Config.API_URL}?lat=${latitude}&lon=${longitude}&key=${Config.API_KEY}`,
+        `${Config.API_URL}?lat=${location.latitude}&lon=${location.longitude}&key=${Config.API_KEY}`,
       ).then(response => response.json());
       setData(response);
     } catch (error) {
@@ -17,8 +18,10 @@ const useGetWeather = (latitude, longitude) => {
   };
 
   useEffect(() => {
-    getWeatherDate();
-  }, []);
+    if (location) {
+      getWeatherDate(location);
+    }
+  }, [location]);
 
   return data;
 };
