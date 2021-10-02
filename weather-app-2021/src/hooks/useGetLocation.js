@@ -22,7 +22,6 @@ const useGetLocation = () => {
   const getLocation = () => {
     Geolocation.getCurrentPosition(
       position => {
-        console.log('🔥', position);
         const {latitude, longitude} = position.coords;
         setLocation({
           latitude,
