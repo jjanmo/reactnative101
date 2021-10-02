@@ -2,29 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
-const Location = () => {
-  const [location, setLocation] = useState({latitude: 0, longitude: 0});
-
-  useEffect(() => {
-    Geolocation.getCurrentPosition(
-      position => {
-        console.log(position);
-        const {latitude, longitude} = position.coords;
-        setLocation({
-          latitude,
-          longitude,
-        });
-      },
-      error => {
-        console.log(error.code, error.message);
-      },
-    );
-  }, []);
-
+const Location = ({latitude, longitude}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.location}>{location.latitude}</Text>
-      <Text style={styles.location}>{location.longitude}</Text>
+      <Text style={styles.location}>{latitude}</Text>
+      <Text style={styles.location}>{longitude}</Text>
     </View>
   );
 };

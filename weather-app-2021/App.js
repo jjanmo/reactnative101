@@ -6,25 +6,13 @@ import {
   StyleSheet,
   PermissionsAndroid,
 } from 'react-native';
-import Geolocation from 'react-native-geolocation-service';
 import Calendar from './src/components/Calender';
 import Weather from './src/components/Weather';
 import Location from './src/components/Location';
+import useGetLocation from './src/hooks/useGetLocation';
 
 const App = () => {
-  useEffect(async () => {
-    if (Platform.OS === 'ios') {
-      Geolocation.requestAuthorization('always');
-      Geolocation.setRNConfiguration({
-        skipPermissionRequests: false,
-        authorizationLevel: 'whenInUse',
-      });
-    } else if (Platform.OS === 'android') {
-      await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-      );
-    }
-  }, []);
+  const {latitude, longitude} = useGetLocation();
 
   return (
     <SafeAreaView style={styles.container}>
