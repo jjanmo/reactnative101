@@ -20,9 +20,10 @@ const Location = ({countryCode, city}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1.5,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 50,
   },
   country: {
     color: '#799cff',

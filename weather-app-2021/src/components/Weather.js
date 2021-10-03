@@ -1,11 +1,15 @@
-import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import Day from './Day';
 
 const Weather = ({data}) => {
-  console.log(data);
   return (
     <View style={styles.container}>
-      <FlatList renderItem={data} />
+      <ScrollView horizontal pagingEnabled>
+        {data &&
+          data.length > 0 &&
+          data.map((item, index) => <Day key={index} {...item} />)}
+      </ScrollView>
     </View>
   );
 };
@@ -13,12 +17,6 @@ const Weather = ({data}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'yellowgreen',
-  },
-  weather: {
-    color: 'white',
   },
 });
 
