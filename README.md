@@ -8,7 +8,7 @@
 
 > 업데이트되면 한번식 들춰보게된다. 👍
 
-## ver.2021 React Native 101
+## ver.2021
 
 <details>
   <summary>Intro</summary>
@@ -21,6 +21,6 @@
 
 ---
 
-## ver.2020 MyWeatherApp Flow
+## ver.2020 : MyWeatherApp Flow
 
 ![app-flow](screenshots/weather_app.png)
