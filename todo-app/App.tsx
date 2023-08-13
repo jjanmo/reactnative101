@@ -1,15 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  NativeSyntheticEvent,
+  StyleSheet,
+  Text,
+  TextInput,
+  TextInputChangeEventData,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { theme } from './colors';
 import { useState } from 'react';
 
 export default function App() {
   const [active, setActive] = useState<'work' | 'travel'>('work');
+  const [text, setText] = useState<string>('');
 
   const handlePress = () => {
     setActive((prev) => {
       return prev === 'travel' ? 'work' : 'travel';
     });
+  };
+  const handleChangeText = (text: string) => {
+    console.log(text);
+    setText(text);
   };
 
   return (
@@ -20,7 +33,7 @@ export default function App() {
           <Text
             style={{
               ...styles.button,
-              color: active === 'work' ? theme.text : theme.inactiveText,
+              color: active === 'work' ? theme.white : theme.grey,
             }}
           >
             Work
@@ -30,12 +43,22 @@ export default function App() {
           <Text
             style={{
               ...styles.button,
-              color: active === 'travel' ? theme.text : theme.inactiveText,
+              color: active === 'travel' ? theme.white : theme.grey,
             }}
           >
             Travel
           </Text>
         </TouchableOpacity>
+      </View>
+      <View>
+        <TextInput
+          style={styles.input}
+          placeholder={`${
+            active === 'work' ? 'Add To Do!' : 'Where do you want to go?'
+          }`}
+          onChangeText={handleChangeText}
+          value={text}
+        />
       </View>
     </View>
   );
@@ -45,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 30,
     flex: 1,
-    backgroundColor: theme.background,
+    backgroundColor: theme.black,
   },
   header: {
     flexDirection: 'row',
@@ -54,5 +77,13 @@ const styles = StyleSheet.create({
   },
   button: {
     fontSize: 40,
+  },
+  input: {
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    marginVertical: 15,
+    borderRadius: 5,
+    backgroundColor: theme.white,
+    fontSize: 20,
   },
 });
