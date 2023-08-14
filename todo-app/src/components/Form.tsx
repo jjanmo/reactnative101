@@ -13,6 +13,8 @@ export default function Form() {
   };
 
   const handleSubmit = () => {
+    if (!text) return;
+
     const key = Crypto.randomUUID();
     const newTodo: Todo = {
       id: key,
@@ -37,6 +39,7 @@ export default function Form() {
         value={text}
         onChangeText={handleChangeText}
         onSubmitEditing={handleSubmit}
+        autoFocus
       />
     </View>
   );

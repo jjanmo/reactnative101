@@ -21,7 +21,7 @@ export default function Todo({
   type: TodoType;
   completed: boolean;
 }) {
-  const { todos, setTodos, currentType } = useTodoContext();
+  const { todos, setTodos } = useTodoContext();
 
   const handlePressDelete = (id: string) => () => {
     Alert.alert('Really Delete it?', '', [
@@ -56,10 +56,14 @@ export default function Todo({
     setText(text);
   };
   const handleSubmit = () => {
-    todos[id].content = text;
-    setTodos({
-      ...todos,
-    });
+    // 수정할 내용이 있는 경우만 수정, 없으면 그대로 유지
+    if (text) {
+      todos[id].content = text;
+      setTodos({
+        ...todos,
+      });
+    }
+
     setText('');
     setIsEdit(!isEdit);
   };
@@ -76,6 +80,7 @@ export default function Todo({
           value={text}
           onChangeText={handleChangeText}
           onSubmitEditing={handleSubmit}
+          autoFocus
         />
       )}
       {!isEdit && (
