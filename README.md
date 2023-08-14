@@ -16,7 +16,7 @@
 
 > [Reference](https://docs.expo.dev/tutorial/introduction/)
 
-진짜 오랜만에(2023.08) RN을 하는 부분이라서, 우선은 튜토리얼부터 진행해보았다. 원래는 RN CLI로 해야하는데, 당장 나에게 미션이 들어온 것이 expo를 이용하는 것이기에... Start 🚀
+진짜 오랜만에(2023.08) RN을 하는 부분이라서, 우선은 튜토리얼부터 진행해보았다.(따라하기 or 문서읽기) 원래는 RN CLI로 해야하는데, 당장 나에게 들어온 미션은 expo를 이용하는 것이기에... Start 🚀
 
 ## TodoApp
 
