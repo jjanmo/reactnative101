@@ -2,25 +2,32 @@
 
 > Learn react native making simple apps 🥳
 
-> with [NomadCoders ReactNative 101](https://nomadcoders.co/react-native-for-beginners)
+## WeatherApp
 
-## ver.2022
+> `weather-app-2021` in folder : ver.2021/2022 use rn-cli
 
-> 업데이트되면 한번식 들춰보게된다. 👍
+> `weather-app` in folder : ver.2020 → use expo
 
-## ver.2021
-
-<details>
-  <summary>Intro</summary>
-
-- 처음 위 강의를 통해서 리액트 네이티브를 시작하였다. 회사에서 리액트 네이티브를 사용해야했기 때문에 스스로 (선!)학습을 위해서 선택한 강의였다. 그렇게 1년이 지난 지금, 해당강의가 업데이트 되었다는 소식을 들었다. 업데이트된 부분이 무엇이 있는지 궁금해서 다시 한번 들춰본다.
-
-- 해당 강의는 Expo를 사용한다. 하지만 실제 리액트 네이티브 앱을 만들때는 대부분 `React-Native-CLI`를 통해서 만든다. 나 역시 실무에서는 후자를 사용하였다.
-
-</details>
-
----
-
-## ver.2020 : MyWeatherApp Flow
+> Ref : [NomadCoders ReactNative 101](https://nomadcoders.co/react-native-for-beginners)
 
 ![app-flow](screenshots/weather_app.png)
+
+## Expo Tutorials
+
+> [Reference](https://docs.expo.dev/tutorial/introduction/)
+
+진짜 오랜만에(2023.08) RN을 하는 부분이라서, 우선은 튜토리얼부터 진행해보았다. 원래는 RN CLI로 해야하는데, 당장 나에게 미션이 들어온 것이 expo를 이용하는 것이기에... Start 🚀
+
+## TodoApp
+
+> called `WorkHardTravelHardApp` with [NomadCoders ReactNative 101](https://nomadcoders.co/react-native-for-beginners)
+
+<details>
+  <summary>Features</summary>
+
+- [x] 카테고리별 할 일(상단 탭) 리스트업
+- [x] 할 일 생성/추가
+- [x] 할 일 수정 : 내용 및 상태 변경
+- [x] 할 일 제거
+- [x] AsyncStorage에 할 일/탭 정보 저장
+</details>
